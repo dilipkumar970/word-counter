@@ -28,7 +28,7 @@ function App() {
     })
     setTimeout(() => {
       showAlert(null)
-    }, 2500);
+    }, 3500);
   }
   const toggleMode = ()=>{
     if(mode==='light'){
@@ -49,17 +49,20 @@ function App() {
       path: "/textForms",
       element:
       <>
-      <Navbar  mode={mode} toggleMode={toggleMode} /> 
+        <Navbar  mode={mode} toggleMode={toggleMode} /> 
+        <Alert alert={alert}/>
        <div className="container my-2">
           <TextForm heading="Enter the Text to Analyze" mode={mode}/>
         </div> 
-        </>       
+      </>
+       
     },
     {
       path:"/about",
       element: 
       <>
       <Navbar  mode={mode} toggleMode={toggleMode} /> 
+      <Alert alert={alert}/>
       <About mode={mode} toggleMode={toggleMode} />
       </>
     },
@@ -68,6 +71,7 @@ function App() {
       element: 
       <>
         <Navbar  mode={mode} toggleMode={toggleMode} /> 
+        <Alert alert={alert}/>
         <div className="container my-2">
           <TextForm heading="Enter the Text to Analyze" mode={mode}/>
         </div> 
@@ -76,8 +80,8 @@ function App() {
   ]);
   return (
     <>
-    <Alert alert={alert}/>
     <RouterProvider router={router} />
+
     </>
   );
 }
