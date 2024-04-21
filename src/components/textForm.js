@@ -44,7 +44,7 @@ export default function TextForm(props) {
                 <button type="button" className="btn btn-primary mx-1 my-2" onClick={handleClear}>Clear text </button>
                 <button type="button" className="btn btn-primary mx-1 my-2" onClick={handleCopy}>Copy text </button>
             </div>
-            <p className='mx-3' style={{color: props.mode==='dark'?'white':'#042743'}}> {text.split(' ').length} Words characters {text.length}</p>
+            <p className='mx-3' style={{color: props.mode==='dark'?'white':'#042743'}}> {text.split(" ").filter((element)=>{ return element.length!==0}).length} Words characters {text.length}</p>
             <p className='mx-3' style={{color: props.mode==='dark'?'white':'#042743'}}>{0.008*text.split(' ').length} Minutes Read </p>
         </div>
         
